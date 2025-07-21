@@ -1,21 +1,21 @@
 
 # Introducción a Bases de Datos Relacionales
 
-## ✅ 1. ¿Qué es una Base de Datos Relacional?
+## 1. ¿Qué es una Base de Datos Relacional?
 
-Una **base de datos relacional** es un sistema que organiza la información en **tablas** relacionadas entre sí, facilitando el **almacenamiento, consulta y gestión** de datos. Es ampliamente utilizada en organizaciones para **centralizar información**, **evitar duplicidad de datos** y **mejorar el acceso y análisis** de la información.
+Una **base de datos relacional** es un sistema que organiza la información en **tablas** relacionadas entre sí, facilitando el **almacenamiento, consulta y gestión** de datos. 
 
 ---
 
-## ✅ 2. Características, Rol y Elementos Fundamentales
+##  2. Características, Rol y Elementos Fundamentales
 
-### 📌 Características:
+### Características:
 - Estructurada en tablas con filas y columnas.
 - Usa relaciones lógicas entre tablas mediante claves.
 - Garantiza integridad y consistencia de los datos.
 - Permite el uso de SQL para manipular los datos.
 
-### 🎯 Rol en la organización:
+###  Rol en la organización:
 - Centraliza datos de diferentes áreas (ventas, clientes, productos).
 - Mejora la toma de decisiones basada en datos.
 - Automatiza procesos (ej. facturación, inventario).
@@ -23,7 +23,7 @@ Una **base de datos relacional** es un sistema que organiza la información en *
 
 ---
 
-## ✅ 3. Componentes Básicos de una Base de Datos Relacional
+##  3. Componentes Básicos de una Base de Datos Relacional
 
 | Componente          | Descripción                                                                 |
 |---------------------|-----------------------------------------------------------------------------|
@@ -35,7 +35,7 @@ Una **base de datos relacional** es un sistema que organiza la información en *
 
 ---
 
-## ✅ 4. Gestión y Relación de Tablas
+## 4. Gestión y Relación de Tablas
 
 - Cada tabla almacena información específica (clientes, productos, pedidos).
 - Se dividen los datos en diferentes tablas y se relacionan mediante claves.
@@ -43,9 +43,9 @@ Una **base de datos relacional** es un sistema que organiza la información en *
 
 ---
 
-## ✅ 5. Ejemplo: Tabla Clientes y Pedidos
+## 5. Ejemplo: Tabla Clientes y Pedidos
 
-### 🧱 SQL para Crear Tablas
+###  SQL para Crear Tablas
 
 ```sql
 -- Tabla de Clientes
@@ -65,20 +65,3 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
 );
 ```
-
-### 🔗 Relación
-
-- Un cliente puede tener muchos pedidos (**1:N**).
-- Cada pedido pertenece a un solo cliente.
-- `id_cliente` en la tabla `pedidos` es una **clave foránea** que hace referencia a `clientes`.
-
-### ✅ Consulta Ejemplo
-
-```sql
-SELECT p.id_pedido, p.fecha_pedido, p.estado, c.nombre
-FROM pedidos p
-JOIN clientes c ON p.id_cliente = c.id_cliente
-WHERE c.id_cliente = 1;
-```
-
----
